@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#14120f">
-  <meta name="description" content="Eight thoughtful ways to reimagine Grandma’s three marquise sapphires and four diamonds—a new ring, with her story still at its heart.">
-  <title>Grandma’s Ring, Reimagined</title>
+  <meta name="description" content="Two of Grandma’s rings, reimagined: four concepts for her oval sapphire and eight diamonds, plus eight concepts for her three marquise sapphires and four diamonds.">
+  <title>Grandma’s Rings, Reimagined</title>
   <script>document.documentElement.classList.add('js');</script>
   <style>
     :root {
@@ -13,10 +13,10 @@
       --bg: #14120f;
       --surface: #1d1a16;
       --surface-raised: #242019;
-      --gold: #c9a961;
+      --gold: #c9a861;
       --cream: #f5f0e6;
       --muted: #bcb3a5;
-      --line: rgba(201, 169, 97, .22);
+      --line: rgba(201, 168, 97, .22);
       --soft-line: rgba(245, 240, 230, .12);
       --serif: Georgia, 'Times New Roman', serif;
       --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
@@ -27,7 +27,7 @@
     body {
       margin: 0;
       background: var(--bg);
-      background-image: radial-gradient(ellipse 600px 650px at 80% 0%, rgba(201, 169, 97, .065), transparent 80%);
+      background-image: radial-gradient(ellipse 600px 650px at 80% 0%, rgba(201, 168, 97, .065), transparent 80%);
       color: var(--cream);
       font-family: var(--sans);
       font-size: 16px;
@@ -36,8 +36,8 @@
     }
     button { font: inherit; }
     button:not(:disabled) { cursor: pointer; }
-    button, input, textarea { -webkit-tap-highlight-color: transparent; }
-    button:focus-visible, [tabindex]:focus-visible {
+    button, input, textarea, summary { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
       outline: 2px solid var(--gold);
       outline-offset: 5px;
     }
@@ -124,9 +124,12 @@
     .section-heading { margin-bottom: 26px; }
     .section-heading .eyebrow { margin-bottom: 12px; }
     .section-heading .section-intro { max-width: 570px; }
+    .hero + .oval-section { margin-top: 0; }
+    .oval-section + .stones { margin-top: 64px; }
+    .ring-provenance { margin-top: 15px; color: var(--muted); font-size: 13px; }
     .gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
     .concept { overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s, box-shadow .2s; }
-    .concept.is-selected { border-color: var(--gold); box-shadow: 0 0 0 1px rgba(201, 169, 97, .1); }
+    .concept.is-selected { border-color: var(--gold); box-shadow: 0 0 0 1px rgba(201, 168, 97, .1); }
     .image-wrap { position: relative; margin: 10px 10px 0; }
     .concept-image {
       aspect-ratio: 1 / 1;
@@ -159,6 +162,20 @@
     .rationale { border-top: 1px solid var(--soft-line); margin-top: 20px; padding-top: 18px; margin-bottom: 23px; }
     .rationale h4 { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 9px; color: var(--cream); }
     .rationale p { color: var(--muted); font-size: 16px; line-height: 1.75; }
+    details.rationale { padding-top: 6px; }
+    .rationale summary {
+      min-height: 44px;
+      padding: 12px 0;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      cursor: pointer;
+    }
+    .rationale summary::marker { color: var(--gold); }
+    .rationale summary:hover { color: var(--gold); }
+    details.rationale[open] p { padding-top: 5px; }
     .save-button {
       width: 100%;
       min-height: 46px;
@@ -174,10 +191,10 @@
       justify-content: space-between;
       gap: 10px;
     }
-    .save-button:hover { background: rgba(201, 169, 97, .08); border-color: var(--gold); }
-    .save-button[aria-pressed="true"] { color: var(--gold); background: rgba(201, 169, 97, .09); border-color: var(--gold); }
+    .save-button:hover { background: rgba(201, 168, 97, .08); border-color: var(--gold); }
+    .save-button[aria-pressed="true"] { color: var(--gold); background: rgba(201, 168, 97, .09); border-color: var(--gold); }
     .save-symbol { font-size: 20px; line-height: 1; }
-    .shortlist { padding: 25px 22px; margin-top: 24px; background: linear-gradient(120deg, rgba(201, 169, 97, .08), transparent), var(--surface); }
+    .shortlist { padding: 25px 22px; margin-top: 24px; background: linear-gradient(120deg, rgba(201, 168, 97, .08), transparent), var(--surface); }
     .shortlist-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .shortlist h3 { font-size: 26px; }
     .count { flex-shrink: 0; border: 1px solid var(--line); padding: 3px 10px; border-radius: 30px; color: var(--gold); font-size: 12px; }
@@ -232,7 +249,8 @@
     tbody tr:hover td, tbody tr:hover th { background: var(--surface-raised); }
     .table-note { font-size: 13px; color: var(--muted); margin-top: 16px; line-height: 1.8; }
     .table-note strong { color: var(--cream); font-weight: 500; }
-    .gentle-note { margin-top: 24px; padding: 20px 22px; border-left: 2px solid var(--gold); background: rgba(201, 169, 97, .045); }
+    .stone-count-note { margin: 0 0 20px; }
+    .gentle-note { margin-top: 24px; padding: 20px 22px; border-left: 2px solid var(--gold); background: rgba(201, 168, 97, .045); }
     .gentle-note p { color: var(--muted); font-size: 14px; }
     .gentle-note strong { color: var(--cream); font-weight: 500; }
     .steps { list-style: none; padding: 0; margin: 0; }
@@ -244,7 +262,7 @@
       margin-top: 28px;
       padding: 30px 24px;
       text-align: center;
-      background: linear-gradient(135deg, rgba(201, 169, 97, .07), transparent);
+      background: linear-gradient(135deg, rgba(201, 168, 97, .07), transparent);
     }
     .closing-mark { color: var(--gold); letter-spacing: .35em; font-size: 16px; margin-bottom: 13px; }
     .closing p { font-family: var(--serif); font-size: 25px; line-height: 1.5; }
@@ -278,6 +296,7 @@
       .concept h3 { font-size: 28px; }
       .shortlist { padding: 27px 28px; }
       .section { margin-top: 76px; }
+      .oval-section + .stones { margin-top: 76px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -292,6 +311,7 @@
       h1 { font-size: 42px; }
       h2 { font-size: 28px; }
       .section { margin-top: 32px; }
+      .oval-section + .stones { margin-top: 32px; }
       .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
       .concept, .stones, .steps li, .closing { break-inside: avoid; }
       .concept-body { padding: 16px; }
@@ -313,19 +333,107 @@
   <div class="page">
     <header class="site-header">
       <span class="brand">The heirloom edit</span>
-      <span class="header-note">A ring. A new chapter.</span>
+      <span class="header-note">Two rings. A new chapter.</span>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="page-title">
         <p class="eyebrow">For your wife, with a little of Grandma</p>
-        <h1 id="page-title">Grandma’s Ring,<br><em>Reimagined</em></h1>
-        <p class="hero-intro">The three marquise sapphires and four diamonds from her vintage swirl ring, reset for a new generation. Eight new directions for your wife—each keeping <strong>the most meaningful part of the original.</strong></p>
+        <h1 id="page-title">Grandma’s Rings,<br><em>Reimagined</em></h1>
+        <p class="hero-intro">Two of grandma's rings, reimagined — the marquise trio (8 concepts below) and the oval sapphire cluster (4 new concepts at the top).</p>
         <p class="promise">
-          <strong>Exactly her 3 sapphires + 4 diamonds, in every concept.</strong>
-          No stones added. No stones removed. Just a new way to carry them.
+          <strong>Marquise ring: exactly her 3 sapphires + 4 diamonds.</strong>
+          <strong>Oval ring: exactly her 1 oval sapphire + 8 diamonds.</strong>
+          For each ring: no stones added. No stones removed. Just a new way to carry them.
         </p>
-        <button class="text-button needs-js" type="button" id="explore-button">Explore the eight directions <span class="arrow" aria-hidden="true">↓</span></button>
+        <button class="text-button needs-js" type="button" id="explore-button">Explore the twelve directions <span class="arrow" aria-hidden="true">↓</span></button>
+      </section>
+
+      <section class="section oval-section" id="oval-directions" aria-labelledby="oval-directions-heading">
+        <div class="section-heading">
+          <p class="eyebrow">New / The left-hand ring</p>
+          <h2 id="oval-directions-heading" tabindex="-1">The Oval Cluster — 4 concepts</h2>
+          <p class="section-intro">Her classic daisy cluster: one oval sapphire cradled by eight diamonds. These concepts reimagine that 9-stone family.</p>
+          <p class="ring-provenance">The original: a 1950s–70s yellow-gold organic daisy cluster, with one cornflower-blue oval sapphire and eight small round diamonds.</p>
+        </div>
+
+        <div class="gallery">
+          <article class="concept card" data-design="oval-classic-halo" aria-labelledby="oval-classic-title">
+            <div class="image-wrap">
+              <img class="concept-image" src="design_oval-classic-halo.png" width="1024" height="1024" loading="eager" decoding="async" fetchpriority="high" alt="AI concept: a yellow-gold ring with one prong-set cornflower-blue oval sapphire surrounded by a refined geometric halo of eight round diamonds.">
+              <span class="image-number" aria-hidden="true">01</span>
+            </div>
+            <div class="concept-body">
+              <p class="metal-label">Yellow gold · Geometric halo</p>
+              <h3 id="oval-classic-title">The Classic Halo</h3>
+              <p class="concept-summary">Her original cluster, polished into an airy eight-diamond halo.</p>
+              <details class="rationale">
+                <summary>The thought behind it</summary>
+                <p>A refined geometric halo brings a more deliberate rhythm to her original irregular cluster, without losing its familiar warmth. Exactly eight round diamonds surround her one cornflower-blue oval sapphire in yellow gold. Fine prongs leave the sapphire open to as much light as the setting allows, rather than drawing a continuous metal border around it. The jeweler should space the halo around the actual inherited stones—not add diamonds to fill gaps—and confirm a secure, comfortable basket height.</p>
+              </details>
+              <button class="save-button needs-js" type="button" data-save="oval-classic-halo" aria-pressed="false" aria-label="Save The Classic Halo to your shortlist">
+                <span class="save-label">Save direction</span><span class="save-symbol" aria-hidden="true">+</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="concept card" data-design="oval-diana" aria-labelledby="oval-diana-title">
+            <div class="image-wrap">
+              <img class="concept-image" src="design_oval-halo-white-gold.png" width="1024" height="1024" loading="lazy" decoding="async" alt="AI concept: a white-gold ring with one cornflower-blue oval sapphire, eight round diamonds in a flower-petal halo, and milgrain metal detailing.">
+              <span class="image-number" aria-hidden="true">02</span>
+            </div>
+            <div class="concept-body">
+              <p class="metal-label">White gold · Milgrain petal halo</p>
+              <h3 id="oval-diana-title">The Diana</h3>
+              <p class="concept-summary">A royal-engagement silhouette, with brighter white-on-blue contrast.</p>
+              <details class="rationale">
+                <summary>The thought behind it</summary>
+                <p>A flower-petal halo borrows the romance of the royal-engagement silhouette while keeping her own nine-stone family intact: one oval sapphire and exactly eight round diamonds. White gold lets the diamond melee read brighter against the cornflower blue, while milgrain gives each petal a softly hand-finished edge. Those tiny beads are metal, not additional stones. The jeweler should tailor the petal spacing to her diamonds and discuss maintenance if a rhodium finish is chosen.</p>
+              </details>
+              <button class="save-button needs-js" type="button" data-save="oval-diana" aria-pressed="false" aria-label="Save The Diana to your shortlist">
+                <span class="save-label">Save direction</span><span class="save-symbol" aria-hidden="true">+</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="concept card" data-design="oval-starburst" aria-labelledby="oval-starburst-title">
+            <div class="image-wrap">
+              <img class="concept-image" src="design_oval-east-west-modern.png" width="1024" height="1024" loading="lazy" decoding="async" alt="AI concept: a low-profile yellow-gold ring with one east-west bezel-set oval sapphire and eight round diamonds spaced around it like clock markers.">
+              <span class="image-number" aria-hidden="true">03</span>
+            </div>
+            <div class="concept-body">
+              <p class="metal-label">Yellow gold · East–west bezel</p>
+              <h3 id="oval-starburst-title">The Starburst</h3>
+              <p class="concept-summary">An east–west bezel for the lowest-profile everyday direction.</p>
+              <details class="rationale">
+                <summary>The thought behind it</summary>
+                <p>Turning her one oval sapphire east–west gives the cluster a fresh, horizontal stance. A smooth yellow-gold bezel surrounds the center, with exactly eight round diamonds ringing it at clock-like positions. This is the lowest daily-wear profile intended among the oval concepts, subject to the sapphire’s actual depth. The center bezel has no projecting prongs to snag; the jeweler should also keep the diamond settings smooth and low. The result feels graphic and modern without adding or removing a single stone.</p>
+              </details>
+              <button class="save-button needs-js" type="button" data-save="oval-starburst" aria-pressed="false" aria-label="Save The Starburst to your shortlist">
+                <span class="save-label">Save direction</span><span class="save-symbol" aria-hidden="true">+</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="concept card" data-design="oval-antique-daisy" aria-labelledby="oval-antique-title">
+            <div class="image-wrap">
+              <img class="concept-image" src="design_oval-vintage-antique.png" width="1024" height="1024" loading="lazy" decoding="async" alt="AI concept: a warm patina-finished gold daisy ring with one oval blue sapphire, eight round diamonds, a scalloped basket, and milgrain edges.">
+              <span class="image-number" aria-hidden="true">04</span>
+            </div>
+            <div class="concept-body">
+              <p class="metal-label">Warm patina gold · Scalloped basket</p>
+              <h3 id="oval-antique-title">The Antique Daisy</h3>
+              <p class="concept-summary">The closest echo of her organic daisy, softened with milgrain.</p>
+              <details class="rationale">
+                <summary>The thought behind it</summary>
+                <p>A scalloped basket keeps this direction closest to the organic character of her original 1960s-style cluster. One oval sapphire remains cradled by exactly eight round diamonds, with warm, patina-finished gold giving the new setting a gently lived-in character. Milgrain echoes mid-century hand-finishing without introducing extra stones. The warmth comes from the proposed finish, not a need to reuse the old mounting; the jeweler should balance those scalloped details with sturdy construction and smooth edges.</p>
+              </details>
+              <button class="save-button needs-js" type="button" data-save="oval-antique-daisy" aria-pressed="false" aria-label="Save The Antique Daisy to your shortlist">
+                <span class="save-label">Save direction</span><span class="save-symbol" aria-hidden="true">+</span>
+              </button>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="stones card" aria-labelledby="stones-heading">
@@ -538,6 +646,12 @@
           <h2 id="comparison-heading">A little practical perspective.</h2>
           <p class="section-intro">How a ring feels on an ordinary Tuesday matters as much as how it looks in a box. Here’s the starting comparison to take to your jeweler.</p>
         </div>
+        <p class="table-note stone-count-note">
+          <strong>Stone-count check, per ring:</strong><br>
+          Left-hand oval cluster: <strong>1 oval sapphire + 8 round diamonds = 9 stones.</strong><br>
+          Right-hand marquise trio: <strong>3 marquise sapphires + 4 round diamonds = 7 stones.</strong><br>
+          Each ring keeps its own original stones; nothing is added, removed or shared between rings. The table below compares the eight marquise directions.
+        </p>
         <div class="comparison-intro">
           <span>Concept-level estimates</span>
           <span class="scroll-hint" aria-hidden="true">Swipe to compare →</span>
@@ -627,6 +741,9 @@
         <div class="gentle-note">
           <p><strong>If everyday ease comes first:</strong> begin with The Modernist. <strong>If recognizing Grandma’s ring matters most:</strong> begin with The Heirloom Echo. Neither choice is more sentimental—the meaning is already in the stones.</p>
         </div>
+        <div class="gentle-note">
+          <p><strong>For the oval cluster:</strong> The Starburst is the lowest-profile starting direction for everyday ease; The Antique Daisy stays closest to her original organic cluster. The Classic Halo refines the familiar shape, while The Diana brings a brighter white-metal frame. All four keep the same nine stones.</p>
+        </div>
       </section>
 
       <section class="section" aria-labelledby="next-heading">
@@ -635,6 +752,7 @@
           <h2 id="next-heading">What happens next</h2>
           <p class="section-intro">The pictures open the conversation. A good jeweler makes the design truly belong to her.</p>
         </div>
+        <p class="table-note stone-count-note"><strong>One process, two separate heirlooms.</strong> The steps below describe the marquise ring. For the oval cluster, follow the same inspection, measurement and approval process with its own nine-stone layout: one oval sapphire and eight round diamonds. Check the oval’s depth, halo spacing and setting height in its own CAD.</p>
         <ol class="steps">
           <li>
             <span class="step-number" aria-hidden="true">1</span>
@@ -666,7 +784,7 @@
     </main>
 
     <footer>
-      <p class="disclaimer">Renderings are AI concepts, not CAD. Actual stone sizes/relations set by your jeweler. Image details are illustrative; confirm the exact 3-sapphire, 4-diamond layout, setting construction and proportions in the final CAD. Sapphire dimensions shown here are estimates, not measurements.</p>
+      <p class="disclaimer">Renderings are AI concepts, not CAD. Both rings’ concepts are stone-count verified against their respective briefs: exactly 1 oval sapphire + 8 round diamonds for the oval cluster, and 3 marquise sapphires + 4 round diamonds for the marquise ring. Actual stone sizes and relationships are set by your jeweler. Image details are illustrative; confirm each ring’s exact stone layout, setting construction and proportions in its final CAD. Sapphire dimensions shown here are estimates, not measurements.</p>
       <p class="dedication">Grandma’s stones, new story. — for your wife, with love.</p>
     </footer>
   </div>
@@ -676,6 +794,30 @@
       'use strict';
 
       var designs = [
+        {
+          id: 'oval-classic-halo',
+          ring: 'oval',
+          name: 'The Classic Halo',
+          note: 'Yellow-gold geometric halo with exactly one cornflower-blue oval sapphire and eight round diamonds. Refine the original irregular cluster; fine prongs keep the sapphire open to light. Fit the halo to the existing stones.'
+        },
+        {
+          id: 'oval-diana',
+          ring: 'oval',
+          name: 'The Diana',
+          note: 'White-gold flower-petal halo with exactly one oval sapphire and eight round diamonds. A royal-engagement-inspired silhouette with milgrain metal detailing, not extra stones. Discuss petal spacing and any rhodium-finish maintenance.'
+        },
+        {
+          id: 'oval-starburst',
+          ring: 'oval',
+          name: 'The Starburst',
+          note: 'Yellow-gold east-west bezel-set oval sapphire with exactly eight round diamonds at clock-like positions. Lowest-profile intent among the oval concepts; the center bezel avoids projecting prongs. Confirm height from stone depth and keep diamond settings smooth.'
+        },
+        {
+          id: 'oval-antique-daisy',
+          ring: 'oval',
+          name: 'The Antique Daisy',
+          note: 'Warm patina-finished gold with a scalloped basket, exactly one oval sapphire and eight round diamonds. Closest to the original organic daisy cluster, with milgrain echoing mid-century hand-finishing. Discuss a new-metal finish, sturdy scallops and smooth edges.'
+        },
         {
           id: 'heirloom-echo',
           name: 'The Heirloom Echo',
@@ -816,33 +958,70 @@
         selected.clear();
         persist();
         render();
-        status.textContent = 'Shortlist cleared. All eight directions are still here to explore.';
+        status.textContent = 'Shortlist cleared. All twelve directions are still here to explore.';
         document.querySelector('[data-save]').focus({ preventScroll: true });
       });
 
       function buildNotes() {
+        var hasOval = designs.some(function (design) {
+          return selected.has(design.id) && design.ring === 'oval';
+        });
+        var hasMarquise = designs.some(function (design) {
+          return selected.has(design.id) && design.ring !== 'oval';
+        });
+
         var lines = [
-          'GRANDMA’S RING, REIMAGINED',
+          'GRANDMA’S RINGS, REIMAGINED',
           '',
           'The brief',
-          'Repurpose the original three deep royal-blue marquise sapphires (estimated 5–6 mm each) and four small round brilliant diamonds into a new ring for my wife.',
-          'Use exactly these seven stones: no stones added or removed. Do not reuse the original 1950s yellow-gold mounting; use new metal.',
-          '',
-          'Shortlisted directions'
+          'Grandma’s stones, new settings for my wife. Each ring keeps its own original stones: nothing added, nothing removed, and no stones transferred between rings.'
         ];
+
+        if (hasOval) {
+          lines.push(
+            '',
+            'Left-hand ring — the oval cluster',
+            'Reimagine the original 1950s–70s yellow-gold organic daisy cluster with exactly one cornflower-blue oval sapphire and eight small round diamonds: nine stones total.',
+            'Retain all nine stones in the new setting. Confirm their individual dimensions in person before designing the halo or basket.'
+          );
+        }
+
+        if (hasMarquise) {
+          lines.push(
+            '',
+            'Right-hand ring — the marquise trio',
+            'Repurpose the original three deep royal-blue marquise sapphires (estimated 5–6 mm each) and four small round brilliant diamonds into a new ring for my wife.',
+            'Use exactly these seven stones: no stones added or removed. Do not reuse the original 1950s yellow-gold mounting; use new metal.'
+          );
+        }
+
+        lines.push('', 'Shortlisted directions');
 
         designs.forEach(function (design) {
           if (selected.has(design.id)) {
-            lines.push(design.name + ': ' + design.note);
+            var ringLabel = design.ring === 'oval' ? 'Oval cluster' : 'Marquise trio';
+            lines.push(ringLabel + ' — ' + design.name + ': ' + design.note);
           }
         });
 
+        lines.push('', 'For our consultation');
+
+        if (hasOval) {
+          lines.push(
+            'Oval cluster: inspect stone condition and measure all nine stones in person, including the oval sapphire’s depth. Discuss careful removal, ring size, wedding-band clearance, daily routine, metal alloy, band thickness, halo spacing, snag resistance and basket height.',
+            'Confirm the exact one-oval-sapphire, eight-round-diamond layout in its own CAD before casting and setting.'
+          );
+        }
+
+        if (hasMarquise) {
+          lines.push(
+            'Inspect stone condition and measure all seven stones in person, including depths, before CAD. Discuss careful removal, ring size, wedding-band clearance, daily routine, metal alloy, band thickness, setting height and protected marquise tips.',
+            'Confirm the exact three-sapphire, four-diamond layout in CAD before casting and setting.'
+          );
+        }
+
         lines.push(
-          '',
-          'For our consultation',
-          'Inspect stone condition and measure all seven stones in person, including depths, before CAD. Discuss careful removal, ring size, wedding-band clearance, daily routine, metal alloy, band thickness, setting height and protected marquise tips.',
-          'Confirm the exact three-sapphire, four-diamond layout in CAD before casting and setting.',
-          'Renderings are AI concepts, not CAD. Actual proportions, protection and durability must be assessed by the jeweler.',
+          'Renderings are AI concepts, not CAD. Concept stone counts are verified against the respective per-ring briefs. Actual proportions, protection and durability must be assessed by the jeweler.',
           '',
           'Grandma’s stones, new story.'
         );
@@ -858,7 +1037,7 @@
           if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
           await navigator.clipboard.writeText(notes);
           fallback.hidden = true;
-          status.textContent = 'Copied. Your shortlist and the seven-stone brief are ready to share with your jeweler.';
+          status.textContent = 'Copied. Your shortlist and the matching per-ring stone brief are ready to share with your jeweler.';
         } catch (error) {
           notesText.value = notes;
           fallback.hidden = false;
@@ -869,12 +1048,31 @@
       });
 
       document.getElementById('explore-button').addEventListener('click', function () {
-        var heading = document.getElementById('directions-heading');
+        var heading = document.getElementById('oval-directions-heading');
         heading.focus({ preventScroll: true });
-        document.getElementById('directions').scrollIntoView({
+        document.getElementById('oval-directions').scrollIntoView({
           behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
           block: 'start'
         });
+      });
+
+      var printDetails = [];
+
+      window.addEventListener('beforeprint', function () {
+        printDetails = [];
+        document.querySelectorAll('details.rationale').forEach(function (details) {
+          if (!details.open) {
+            printDetails.push(details);
+            details.open = true;
+          }
+        });
+      });
+
+      window.addEventListener('afterprint', function () {
+        printDetails.forEach(function (details) {
+          details.open = false;
+        });
+        printDetails = [];
       });
 
       render();
